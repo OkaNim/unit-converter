@@ -6,7 +6,7 @@ Python 3
 
 
 ## How to use (command lines)
-python 159_01_unit-converter_211115.py [data] [component unit list]<br>
+python 159_01_unit-converter_211115.py [DATA] [UNITLIST]<br>
 <br>
 
 
