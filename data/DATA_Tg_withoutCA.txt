@@ -1,0 +1,6 @@
+comment										
+INPUT										
+file-name	tlabel	polymer-name	prop-specifier	value	property	cell-address	no-thead	related-tcd	caption	footnote
+test.journal	Table 1	Table 1	Tg , K	300	Glass transition temperature (Tg)	_	_	_	_	_
+test.journal	Table 1	Table 1	Glass transition temperature (K)	200	Glass transition temperature (Tg)	_	_	_	_	_
+test.journal	Table 1	Table 1	Tgd (°C)	100	Glass transition temperature (Tg)	_	_	_	_	_

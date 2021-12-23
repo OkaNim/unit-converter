@@ -1,0 +1,6 @@
+comment																
+INPUT											CORRECT ANSWER					
+file-name	tlabel	polymer-name	prop-specifier	value	property	cell-address	no-thead	related-tcd	caption	footnote	ca-power-of-ten-in-value/others	ca-unit	ca-coeff	ca-position-describing-unit	ca-value-clean	ca-value-convert
+test.journal	Table 1	Table 1	Permeability	8.0 ± 0.5	Gas permeability coefficient	_	_	_	_	10-6 cc·mm/cm2·day·atm	_  /  10-6	cc·mm  +  cm2·day·atm	1.14227E-11	footnote	8.000000E-06	9.13816E-17
+test.journal	Table 1	Table 1	WVP (g m-1 s-1 Pa-1)	0.5 ± 0.1 × 10-8	Gas permeability coefficient	_	_	_	_	_	× 10-8  /  _	g m-1  +  s-1 Pa-1	12.4306	prop-specifier	5.000000E-09	6.21530E-08
+test.journal	Table 1	Table 1	PO2 / Barrer	10	Gas permeability coefficient	_	_	_	_	_	_  /  _	Barrer  +  _	7.50E-14	prop-specifier	1.000000E+01	7.50062E-13
