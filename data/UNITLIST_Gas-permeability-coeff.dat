@@ -1,0 +1,109 @@
+# property: gas permeability coefficient (P)
+# destination unit: cm3 cm / (cm2 s Pa)
+# 'calculation':: multiplication: 0, additon: 1.
+# 'power of 10' recognized in locations other than physical values:: use according to the notation: 0, always positive power: 1, always negative power: 2.
+# 'start':: If the 2nd part is unnecessary, start=None in the 2nd part, otherwise, start=(number).
+# 'order_non_fix':: describing order of component units is fixed: 0, not fixed: 1.
+# '999' is used as a dummy for empty character and white space. It is deleted in the unit conversion program.
+
+
+calculation=0
+
+power_of_10=2
+
+1st part: start=(1), order_non_fix=0
+2nd part: start=(4), order_non_fix=1
+
+
+(1) # character between component units
+999
+999 999
+·
+(STP)
+999 STP
+999 (STP) 999
+@STP
+999 @STP
+999 @STP 999
+gas(STP)⋅
+
+(2) # volume or weight
+barrer	7.50062e-14
+Barrer	7.50062e-14
+g	1243.06
+kg	1243.06e3
+Kg	1243.06e3
+mg	1243.06e-3
+m3	1e6
+ml	1
+cc	1
+cm3	1
+cm2	1
+m2	1e4
+
+(3) # thickness
+999	1
+m	100
+cm	1
+mm	0.1
+µm	1e-4
+/m	0.01
+m-1	0.01
+/cm	1
+cm-1	1
+mil	2.54e-3
+
+(4) # character between component units
+999
+999 999
+/
+·
+.
+-
+⋅
+
+(5) # area
+999	1
+m2	1e-4
+cm2	1
+m-2	1e-4
+cm-2	1
+
+(6) # time
+s	1
+sec	1
+h	2.77778e-4
+hr	2.77778e-4
+d	1.15741e-5
+day	1.15741e-5
+24h	1.15741e-5
+24 h	1.15741e-5
+s-1	1
+sec-1	1
+h-1	2.77778e-4
+hr-1	2.77778e-4
+d-1	1.15741e-5
+day-1	1.15741e-5
+24h-1	1.15741e-5
+
+(7) # pressure
+Pa	1
+pa	1
+kPa	1e-3
+bar	1e-5
+100 kPa	1e-5
+100kPa	1e-5
+atm	9.86923e-6
+cmHg	7.50062e-4
+cm Hg	7.50062e-4
+mmAq	0.101972
+Pa-1	1
+pa-1	1
+kPa-1	1e-3
+bar-1	1e-5
+100kPa-1	1e-5
+atm-1	9.86923e-6
+cmHg-1	7.50062e-4
+cm Hg-1	7.50062e-4
+mmAq-1	0.101972
+
