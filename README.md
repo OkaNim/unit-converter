@@ -10,6 +10,7 @@ python 159_01_unit-converter_211115.py [DATA] [UNITLIST]<br>
 <br>
 
 
+It is necessary to locate "src_002_value_clean_211028.py" in the same folder. 
 The trial data are in the data folder.<br>
 The program can be used with or without the correct answer data (CA).<br>
 
