@@ -6,7 +6,7 @@ Python 3
 
 
 ## How to use (command lines)
-python 159_01_unit-converter_github_211223.py [DATA] [UNITLIST]<br>
+python 159_01_unit-converter_github_211223.py [DATA file] [UNITLIST file]<br>
 <br>
 
 
