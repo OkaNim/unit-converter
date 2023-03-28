@@ -11,20 +11,20 @@ Please use as described in test.py in src folder.<br>
 After importing src_206_unit_convertor_230324.py, a ccu_file name, a value, and a list putting text are given to convert the value to the desitination unit. If there are some text in where an unit may be described, please put all of them in the list. Check whether an unit is described in order (If recognized, stop checking there.)
 <br>
 <br>
-If test.py is run, the result of unit conversion is displayed as follows:<br>
+If test.py is run, the result (type: dict) is returned as follows:<br>
 <br>
 {'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
-power_10: power of 10<br>
-value_cl: cleaned value<br>
-unit: recognized unit<br>
+        power_10: power of 10<br>
+        value_cl: cleaned value<br>
+        unit: recognized unit<br>
 value_cv: converted value to the destination unit<br>
 unit_cv: destination unit (describe in a ccu_file)<br>
 factor: conversion factor<br>
 use_power_10: how to use a power of 10 recognized in other than value (specify in a ccu_file)<br>
 CCU_file: used a ccu_file name.<br>
 <br>
-Since the result type is dict, you can get only the terms you would like to get using keys.
+
 
 
 <br>
