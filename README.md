@@ -7,9 +7,8 @@ Python 3
 
 ## How to use
 Please use as described in test.py in src folder.<br>
-After importing src_206_unit_convertor_230324.py, a ccu_file name, a value, and a list putting text   are given to convert the value to the desitination unit.
-If there are some text in where an unit may be described, please put all of them in the list.
-
+<br>
+After importing src_206_unit_convertor_230324.py, a ccu_file name, a value, and a list putting text are given to convert the value to the desitination unit. If there are some text in where an unit may be described, please put all of them in the list. Check in the order whether a unit is recognized (If recognized, stop checking there.)
 <br>
 <br>
 If test.py is run, the result of unit conversion is displayed as follows:<br>
