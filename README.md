@@ -6,9 +6,12 @@ Python 3
 
 
 ## How to use
-Please use as described in test.py in src folder.
-If test.py is run, the result of unit conversion is displayed as follows:
+Please use as described in test.py in src folder.<br>
+If test.py is run, the result of unit conversion is displayed as follows:<br>
+<br>
 {'power_10': '_', 'value_cl': '9.200000E+00', 'unit': '_', 'value_cv': '9.200000E+00', 'unit_cv': '_', 'factor': '_', 'use_power_10': 'use as recognized', 'CCU_file': 'thermal-condutivity_CCU.txt'}
+<br>
+<br>
 The result is dict-type.
 
 
