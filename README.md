@@ -11,12 +11,11 @@ If test.py is run, the result of unit conversion is displayed as follows:<br>
 <br>
 {'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
-power_10:&#009;recognized powewr of 10<br>
-value_cl:&#009;recognized powewr of 10<br>
-cleaned value<br>
+power_10: powewr of 10<br>
+value_cl: cleaned value<br>
 unit: recognized unit<br>
 value_cv: converted value to the destination unit<br>
-unit_cv: destination unit<br>
+unit_cv: destination unit (describe in a ccu_file)<br>
 factor: conversion factor<br>
 use_power_10: how to use power of 10 recognized in other than value (specify in a ccu_file)<br>
 
