@@ -13,7 +13,7 @@ After importing src_206_unit_convertor_230324.py, a CCU file name, a value, and 
 <br>
 If test.py is run, the result (type: dict) will be returned as follows:<br>
 <br>
-{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
+	*{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
 power_10: power of 10<br>
 value_cl: cleaned value<br>
