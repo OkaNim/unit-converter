@@ -36,7 +36,7 @@ Show how to prepare the CCU file for thermal conductivity as an example, below.
 
 
 A CCU file includes the following three terms:<br>
-	-- combination of component units --<br>
+<br>	-- combination of component units --<br>
 	-- destination –-<br>
 	-- + or - sign for power of 10 in text other than value --<br>
 <br>
