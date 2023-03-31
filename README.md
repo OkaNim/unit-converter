@@ -6,54 +6,49 @@ Python 3
 
 
 ## How to use
-Please use as below (the same content is written in test.py in /src).<br>
+Please use as below (or run test.py, the same content is written in test.py in /src).<br>
 <br>
-<br>
+---------------------<br>
 import src_206_unit_convertor_230324 as src_206<br>
 <br>
 ccu_file = "electric-conductivity_CCU.txt"<br>
-value = "9.2 ×　10-5"<br>
-text = [<br>
-            "electric conductivity (mS/m)",<br>
-            "Results of the obtained physical values",<br>
-        ]<br>
+value = "9.2 × 10-5"<br>
+text = ["electric conductivity (mS/m)", "Results of the obtained physical values"]<br>
+<br>
 result = src_206.main(ccu_file, value, text)<br>
+print(result)<br>
+---------------------<br>
 <br>
-
-<br>--- print(result) ---
-*{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
-<br>---------------------
-<br>
-<br>
-After importing src_206_unit_convertor_230324.py, give a CCU file name, a value, and a list putting text to convert the value to the desitination unit. If only cleaning values, using unitless_CCU.txt or set ccu_file = "".
-If using unitless_CCU.txt, how to use powers of ten recognized in text other than value can be specified in the file.
-If there are multiple text in which an unit may be written, please put all of them in the list. Check whether an unit is written in order (If recognized, stop checking there.)
-<br>
-<br>
-If test.py is run, the result will be returned in the dict form as follows:<br>
-<br>
-*{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
+Print on screen as follow:<br>
+{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
 power_10: recognized power of ten<br>
 value_cl: cleaned value<br>
 unit: recognized unit<br>
-value_cv: converted value to the destination unit<br>
-unit_cv: destination unit (registered in a CCU file)<br>
+value_cv: value converted to a destination unit<br>
+unit_cv: destination unit<br>
 factor: conversion factor<br>
-use_power_10: how to use a power of ten recognized in text other than value (specified in a CCU file)<br>
+use_power_10: how to use a power of ten recognized in text other than value<br>
 CCU_file: used CCU file name.<br>
 <br>
-Underscores(_) in dict_value denote that a value or a power of ten couldn't be recognized, cleaned, or converted.
-
+Underscores(_) in dict_values denote that a value or a power of ten couldn't be recognized, cleaned, or converted.<br>
 <br>
 <br>
+A unit in input text is recognized and then convert an input value for a destination unit.
+An input value is cleaned to enable to use in int or float type before converting.
+A CCU file (CCU: combination of component units) is neccessary to recognize a unit and convert a value.
+A destination unit is registered in the file in advance.
+Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance.
+The CCU files for some material propertie are put in /src/199_file/CCU.
+If there is no file for desirable material property, it is neccessary to prepare (see 'How to prepare CCU files' below). 
+If only clean values, use unitless_CCU.txt or set ccu_file = "".
+If use unitless_CCU.txt, how to use powers of ten recognized in text other than value can be specified in the file.<br>
+If there are multiple text in which an unit may be written, put all of them in the list.
+Check whether an unit is written in order (If recognized, stop checking there.)
+Since the conversion result is given by the dict form, only the desirable dict_values can be obtained by the keys.<br><br><br>
 
 
 ### How to prepare CCU files
-CCU denotes combination of component units.
-A CCU file is a setting file for unit conversion.
-Some CCU files are put in /src/199_file/CCU.
-However, if there is no CCU file for applicable material properties, it is necessary to prepare the CCU files in advance.
 Show how to prepare the CCU file for thermal conductivity as an example here.
 <br>
 <br>
