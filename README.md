@@ -31,7 +31,7 @@ factor: conversion factor<br>
 use_power_10: how to use a power of ten recognized in text other than value<br>
 CCU_file: used CCU file name.<br>
 <br>
-Underscores(_) in dict_values denote that a value or a power of ten couldn't be recognized, cleaned, or converted.<br>
+Underscores(_) in dict_values denote that a value or a power of ten could not be recognized, not be cleaned, or not be converted.<br>
 <br>
 <br>
 A unit in input text is recognized and then convert an input value for a destination unit.
