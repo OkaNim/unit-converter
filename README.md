@@ -34,7 +34,6 @@ use_power_10: how to use a power of ten recognized in text other than value<br>
 CCU_file: used CCU file name.<br>
 <br>
 Underscores(_) in dict_values denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
-The desirable dict_values can be obtained by the keys.<br>
 <br>
 <br>
 A unit in input text or value is recognized and then convert an input value for a destination unit.
