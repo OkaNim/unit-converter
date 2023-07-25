@@ -6,9 +6,10 @@ Python 3
 
 
 ## How to use
-Please use as below (or run test.py, the same content is written in test.py in /src).<br>
+Please run test.py in /src.<br>
 <br>
----------------------<br>
+--- test.py ---<br>
+
 import src_206_unit_convertor_230324 as src_206<br>
 <br>
 ccu_file = "electric-conductivity_CCU.txt"<br>
@@ -17,9 +18,10 @@ text = ["electric conductivity (mS/m)", "Results of the obtained physical values
 <br>
 result = src_206.main(ccu_file, value, text)<br>
 print(result)<br>
----------------------<br>
+
+---------------<br>
 <br>
-Print on screen as follow:<br>
+After running, the results will be printed in the dict form on screen as follow:<br>
 {'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
 power_10: recognized power of ten<br>
@@ -31,20 +33,27 @@ factor: conversion factor<br>
 use_power_10: how to use a power of ten recognized in text other than value<br>
 CCU_file: used CCU file name.<br>
 <br>
-Underscores(_) in dict_values denote that a value or a power of ten could not be recognized, not be cleaned, or not be converted.<br>
+Underscores(_) in dict_values denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
+The desirable dict_values can be obtained by the keys.<br>
 <br>
 <br>
-A unit in input text is recognized and then convert an input value for a destination unit.
-An input value is cleaned to enable to use in int or float type before converting.
+A unit in input text or value is recognized and then convert an input value for a destination unit.
+(If a unit is written in value and text is unnecessary, please set text=[].) 
 A CCU file (CCU: combination of component units) is neccessary to recognize a unit and convert a value.
 A destination unit is registered in the file in advance.
-Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance.
+Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance  (please see '???' below).
 The CCU files for some material propertie are put in /src/199_file/CCU.
-If there is no file for desirable material property, it is neccessary to prepare (see 'How to prepare CCU files' below). 
-If only clean values, use unitless_CCU.txt or set ccu_file = "".
-If use unitless_CCU.txt, how to use powers of ten recognized in text other than value can be specified in the file.<br>
+If there is no file for desirable material property, please create yourself by seeing 'How to prepare CCU files' below. 
+<br>
+An input value is cleaned in the int or float type before converting (the unnecessary characters are deleted). 
+At this time, if a power of ten is included, it will be recogninzed and incorporated with the cleaned value.
+It is the same for a power of ten in text. 
+If cleaning value is only necessary, please set ccu_file = "" or use unitless_CCU.txt.
+<br>
 If there are multiple text in which an unit may be written, put all of them in the list.
 Check whether an unit is written in order (If recognized, stop checking there.)
+
+
 Since the conversion result is given by the dict form, only the desirable dict_values can be obtained by the keys.<br><br><br>
 
 
