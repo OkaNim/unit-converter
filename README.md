@@ -36,26 +36,24 @@ CCU_file: used CCU file name.<br>
 Underscores(_) in dict_values denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
 <br>
 <br>
-A unit in input text or value is recognized and then convert an input value for a destination unit.
-(If a unit is written in value and text is unnecessary, please set text=[].) 
-A CCU file (CCU: combination of component units) is neccessary to recognize a unit and convert a value.
-A destination unit is registered in the file in advance.
-Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance  (please see '???' below).
-The CCU files for some material propertie are put in /src/199_file/CCU.
-If there is no file for desirable material property, please create yourself by seeing 'How to prepare CCU files' below. 
+A unit in input text or value is recognized and then convert an input value for a destination unit.<br>
+(If a unit is written in value and text is unnecessary, please set text=[].) <br>
+A CCU file (CCU: combination of component units) is neccessary to recognize a unit and convert a value.<br>
+A destination unit is registered in the file in advance.<br>
+Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance  (please see '???' below).<br>
+The CCU files for some material propertie are put in /src/199_file/CCU.<br>
+If there is no file for desirable material property, please create yourself by seeing 'How to prepare CCU files' below. <br>
 <br>
-An input value is cleaned in the int or float type before converting (the unnecessary characters are deleted). 
-At this time, if a power of ten is included, it will be recogninzed and incorporated with the cleaned value.
-It is the same for a power of ten in text. 
-If cleaning value is only necessary, please set ccu_file = "" or use unitless_CCU.txt.
+An input value is cleaned in the int or float type before converting (the unnecessary characters are deleted). <br>
+At this time, if a power of ten is included, it will be recogninzed and incorporated with the cleaned value.<br>
+It is the same for a power of ten in text. <br>
+If cleaning value is only necessary, please set ccu_file = "" or use unitless_CCU.txt.<br>
 <br>
-If there are multiple text in which an unit may be written, put all of them in the list.
-Check whether an unit is written in order (If recognized, stop checking there.)
-
-
-Since the conversion result is given by the dict form, only the desirable dict_values can be obtained by the keys.<br><br><br>
-
-
+If there are multiple text in which an unit may be written, put all of them in the list.<br>
+Check whether an unit is written in order (If recognized, stop checking there.)<br>
+<br>
+<br>
+<br>
 ### How to prepare CCU files
 Show how to prepare the CCU file for thermal conductivity as an example here.
 <br>
