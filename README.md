@@ -22,6 +22,7 @@ print(result)<br>
 ---------------<br>
 <br>
 After running, the results will be printed in the dict form on screen as follow:<br>
+<br>
 {'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
 power_10: recognized power of ten<br>
@@ -47,15 +48,15 @@ If there is no file for desirable material property, please create yourself by s
 An input value is cleaned in the int or float type before converting (the unnecessary characters are deleted). <br>
 At this time, if a power of ten is included, it will be recogninzed and incorporated with the cleaned value.<br>
 It is the same for a power of ten in text. <br>
-If cleaning value is only necessary, please set ccu_file = "" or use unitless_CCU.txt.<br>
+If only cleaning value is necessary, please set ccu_file="" or use unitless_CCU.txt.<br>
 <br>
 If there are multiple text in which an unit may be written, put all of them in the list.<br>
-Check whether an unit is written in order (If recognized, stop checking there.)<br>
+Check whether an unit is written in order (if recognized, stop checking there.)<br>
 <br>
 <br>
 <br>
 ### How to prepare CCU files
-Show how to prepare the CCU file for thermal conductivity as an example here.
+Show how to prepare the CCU file (CCU: combination of component units) for thermal conductivity as an example here.
 <br>
 <br>
 A CCU file includes the following three terms:<br>
@@ -69,22 +70,24 @@ For thermal conductivity, register the following two CCUs:<br>
 *power [/length /temperature]<br>
 *energy [/time /length /temperature]<br>
 <br>
-Use names of component units, e.g, power for watt (symbol: W) and length for centimeter (cm) (Names and symbols can be confirmed in used-comp-unit.dat in /src/199_file).
-<br>
-The unit of thermal conductivity is notated by the component units of power, length, and temperature (e.g. W/cm K), or energy, time, length, and temperature (e.g. J/s cm K).
-Therefore, it is necessary to register the two (Two or more can be registered, if needed).
-It is neccessary to prefix * or / to names to denote the numerator and denominator parts, respectively.
-Additionally, it is necessary to describe the components units in the order usually written in text.
-However, the order is not always fixed such as 'W/cm K' and 'W/K cm' (For multiple component units in the denominator part, the order is not fixed frequently).
-If there is a part which the order is unclear, use square brackets ([ ]) for the part.
-In square brackets, combination of all orders is automatically generated.
+Use names of component units, e.g, power for watt (symbol: W) and length for centimeter (cm) (Names and symbols can be confirmed in used-comp-unit.dat in /src/199_file).<br>
+The unit of thermal conductivity composes of the units for power, length, and temperature (e.g. W/cm K), or the units for energy, time, length, and temperature (e.g. J/s cm K).<br>
+Therefore, it is necessary to register two combinations (two or more can be registered, if needed).<br>
+In the registration, it is neccessary to prefix * or / to names to denote the numerator and denominator parts, respectively.<br>
+Additionally, it is necessary to describe the component units in the order usually written.<br>
+However, the order is not always fixed such as 'W/cm K' and 'W/K cm' (For multiple component units in the denominator part, the order is not frequently fixed).<br>
+If there is a part which the order is unclear, use square brackets ([ ]) for the part.<br>
+In square brackets, combinations for all orders are automatically generated.<br>
 However, if the order is clear, that is, unneccessary to use square brackets, it is better not to use them because of less time to execute.<br>
-Based on the registered CCUs, a variery of unit notations for thermal conductivity and a conversion factor for each notation are generated using symbols of component units to recognize a unit in text and to convert a value, respectively. Symbols used can be confirmed in used-comp-unit.dat in /src/199_file. Symbols are registered in the files in /src/199_file/component-unit and symbol-variant.txt in /src/199_file/other-necessaries and inputted from these. If there is no appreciable symbol, it is neccessary to register it or to create a new component unit file. Please see 'How to create a component unit file', if needed).
+Based on the registered CCUs, a variery of unit notations for thermal conductivity and a conversion factor for each notation are generated using symbols of component units to recognize a unit and to convert a value, respectively.<br>
+Symbols used can be confirmed in used-comp-unit.dat in /src/199_file.<br>
+Symbols are registered in the files in /src/199_file/component-unit and symbol-variant.txt in /src/199_file/other-necessaries and inputted from these.<br>
+If there is no appreciable symbol, it is neccessary to register it or to create a new component unit file by seeing 'How to create a component unit file' below.
 <br>
 <br>
-In -- destination –-, written a destination unit such as 'W m-1 K-1'.<br>
-It is necessary to use negative exponents for component units in the denominator part, not slash (/).
-Even if two or more CCUs are registered in -- combination of component units --, one destination unit should be registered.<br>
+In -- destination –-, a destination unit is registerd such as 'W m-1 K-1'.<br>
+In the registration, it is necessary to use negative exponents, not slash (/), for component units in the denominator part.<br>
+Even if two or more combinations are registered in -- combination of component units --, one destination unit should be registered.<br>
 <br>
 <br>
 In -- + or - sign for power of 10 in text other than value --, specify how to use powers of ten recognized in text other than value using 0, 1, or 2.<br>
@@ -93,13 +96,12 @@ These numbers denote as follows:<br>
 1: use always positive<br>
 2: use always negative<br>
 <br>
-Incorrect powers of ten are occasionally written in text.
-If the order of magnitude for values is clear, it is better to specify 1 or 2.
-For 1, if '10-5' is recognized, 100,000 will be multipied by the value to give the cleaned value (value_cl).<br>
+Incorrect powers of ten are occasionally written in text from scientific articles.<br>
+If the order of magnitude for values is clear, it is better to specify 1 or 2.<br>
 <br>
 <br>
-After registering the three, save the CCU file in /src/199_file/CCU.
-The filename can be anything, but must end with '_CCU.txt'.
+After registering the three, save the CCU file in /src/199_file/CCU.<br>
+The filename can be anything, if the end is '_CCU.txt'.<br>
 
 
 ### How to register variants for symbols of component units.
