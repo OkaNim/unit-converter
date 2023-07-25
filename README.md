@@ -21,7 +21,7 @@ print(result)<br>
 
 ---------------<br>
 <br>
-After running, the results will be printed in the dict form on screen as follow:<br>
+After running, the results in the dict form will be printed on screen as follow:<br>
 <br>
 {'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
 <br>
@@ -39,7 +39,7 @@ Underscores(_) in dict_values denote that a value or a power of ten could not be
 <br>
 A unit in input text or value is recognized and then convert an input value for a destination unit.<br>
 (If a unit is written in value and text is unnecessary, please set text=[].) <br>
-A CCU file (CCU: combination of component units) is neccessary to recognize a unit and convert a value.<br>
+A CCU file (CCU: combination of component units) is neccessary to do them.<br>
 A destination unit is registered in the file in advance.<br>
 Additionally, how to use a power of ten recognized in text other than value is specified in the file in advance  (please see '???' below).<br>
 The CCU files for some material propertie are put in /src/199_file/CCU.<br>
@@ -51,7 +51,7 @@ It is the same for a power of ten in text. <br>
 If only cleaning value is necessary, please set ccu_file="" or use unitless_CCU.txt.<br>
 <br>
 If there are multiple text in which an unit may be written, put all of them in the list.<br>
-Check whether an unit is written in order (if recognized, stop checking there.)<br>
+Check whether an unit is written in order or not (if recognized, stop checking there.)<br>
 <br>
 <br>
 <br>
@@ -72,20 +72,20 @@ For thermal conductivity, register the following two CCUs:<br>
 <br>
 Use names of component units, e.g, power for watt (symbol: W) and length for centimeter (cm) (Names and symbols can be confirmed in used-comp-unit.dat in /src/199_file).<br>
 The unit of thermal conductivity composes of the units for power, length, and temperature (e.g. W/cm K), or the units for energy, time, length, and temperature (e.g. J/s cm K).<br>
-Therefore, it is necessary to register two combinations (two or more can be registered, if needed).<br>
-In the registration, it is neccessary to prefix * or / to names to denote the numerator and denominator parts, respectively.<br>
+Therefore, it is necessary to register the two combinations (two or more can be registered, if needed).<br>
+In the registration, it is neccessary to prefix * or / to each name to denote which the component unit is in the numerator or denominator parts, respectively.<br>
 Additionally, it is necessary to describe the component units in the order usually written.<br>
-However, the order is not always fixed such as 'W/cm K' and 'W/K cm' (For multiple component units in the denominator part, the order is not frequently fixed).<br>
+However, the order is not frequently fixed such as 'W/cm K' and 'W/K cm'.<br>
 If there is a part which the order is unclear, use square brackets ([ ]) for the part.<br>
-In square brackets, combinations for all orders are automatically generated.<br>
-However, if the order is clear, that is, unneccessary to use square brackets, it is better not to use them because of less time to execute.<br>
+In square brackets, the notations for all orders are automatically generated.<br>
+However, if the order is clear, it is better not to use square brackets because of less time to execute.<br>
 Based on the registered CCUs, a variery of unit notations for thermal conductivity and a conversion factor for each notation are generated using symbols of component units to recognize a unit and to convert a value, respectively.<br>
 Symbols used can be confirmed in used-comp-unit.dat in /src/199_file.<br>
-Symbols are registered in the files in /src/199_file/component-unit and symbol-variant.txt in /src/199_file/other-necessaries and inputted from these.<br>
+Typical symbols are registered in the files in /src/199_file/component-unit and symbol-variant.txt in /src/199_file/other-necessaries and inputted from these.<br>
 If there is no appreciable symbol, it is neccessary to register it or to create a new component unit file by seeing 'How to create a component unit file' below.
 <br>
 <br>
-In -- destination –-, a destination unit is registerd such as 'W m-1 K-1'.<br>
+In -- destination –-, register a destination unit such as 'W m-1 K-1'.<br>
 In the registration, it is necessary to use negative exponents, not slash (/), for component units in the denominator part.<br>
 Even if two or more combinations are registered in -- combination of component units --, one destination unit should be registered.<br>
 <br>
@@ -102,14 +102,15 @@ If the order of magnitude for values is clear, it is better to specify 1 or 2.<b
 <br>
 After registering the three, save the CCU file in /src/199_file/CCU.<br>
 The filename can be anything, if the end is '_CCU.txt'.<br>
-
-
-### How to register variants for symbols of component units.
-There are occasionally typographycal errors in text, e.g. 'pa' for Pa.
-Therefore, such errors can be registered as variants for symbols of component units in symbol-variant.txt in /src/199_file/other-necessaries.
-The file is a TSV format and consists of three columns of symbol-variant, name, and symbol.
-Register an error notation, the corresponding name and symbol of a component unit, respectively.
-For example,
+<br>
+<br>
+<br>
+### How to register variants for symbols of component units.<br>
+There are occasionally typographycal errors in text from scientific articles, e.g. 'pa' for Pa (pascal).<br>
+Such error notations can be also recognized by registering as the variants in symbol-variant.txt in /src/199_file/other-necessaries.<br>
+The file is a TSV format and consists of three columns of symbol-variant, name, and symbol.<br>
+Register an error notation, the corresponding name and symbol of a component unit, respectively, as below.<br>
+<br>
 symbol-variant	name	symbol<br>
 <br>
 pa	pressure	Pa<br>
