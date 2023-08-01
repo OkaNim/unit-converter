@@ -8,8 +8,7 @@ Python 3
 ## How to use
 Please run test.py in /src without moving out of the folder.<br>
 <br>
---- test.py ---<br>
-<br>
+----- test.py -----<br>
 import src_206_unit_convertor_230801 as src_206<br>
 <br>
 <br>
@@ -25,8 +24,7 @@ result = src_206.main(ccu_file, value, text)<br>
 print("")<br>
 print(result)<br>
 print("")<br>
-<br>
----------------<br>
+-------------------<br>
 <br>
 After running, the results in the dict form will be printed on screen as follow:<br>
 <br>
