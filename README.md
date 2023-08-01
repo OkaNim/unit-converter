@@ -45,7 +45,7 @@ If there are underscores(_) in dict_values, they denote that a value or a power 
 <br>
 <br>
 This program can recognize a unit in input text and then convert value for a destination unit.<br>
-Try to use it using text and value prepared by yourself or by creating your original script such as test.py.<br>
+Try to use it using text and value prepared by yourself or your original script such as test.py.<br>
 (If your original script is not put in /src, the folder path for /src should be specified using sys.path.append to import src_206.)<br>
 A CCU file (CCU: combination of component units) is neccessary to run it.<br>
 Some CCU files for material properties are put in /src/199_file/CCU.<br>
