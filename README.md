@@ -14,10 +14,7 @@ import src_206_unit_convertor_230801 as src_206<br>
 <br>
 ccu_file = "density_CCU.txt"    # Users need to create before running, if there is no desirable ccu file.<br>
 value = "9.2 ×　10-4"<br>
-text = [<br>
-            "bulk density (kg/cm3)",<br>
-            "(Table caption) Results of the obtained physical values",<br>
-        ]<br>
+text = ["bulk density (kg/cm3)", "(Table caption) Results of the obtained physical values"]<br>
 <br>
 result = src_206.main(ccu_file, value, text)<br>
 <br>
