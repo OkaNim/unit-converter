@@ -9,28 +9,28 @@ Python 3
 Please run test.py in /src without moving out of the folder.<br>
 <br>
 --- test.py ---<br>
-
-import src_206_unit_convertor_230801 as src_206
-
-
-ccu_file = "electric-conductivity_CCU.txt"    # Users need to create before running, if there is no desirable ccu file.
-value = "9.2 ×　10-5"
-text = [
-            "electric conductivity (mS/m)",
-            "(Table caption) Results of the obtained physical values",
-        ]
-
-result = src_206.main(ccu_file, value, text)
-
-print("")
-print(result)
-print("")
-
+<br>
+import src_206_unit_convertor_230801 as src_206<br>
+<br>
+<br>
+ccu_file = "density_CCU.txt"    # Users need to create before running, if there is no desirable ccu file.<br>
+value = "9.2 ×　10-4"<br>
+text = [<br>
+            "bulk density (kg/cm3)",<br>
+            "(Table caption) Results of the obtained physical values",<br>
+        ]<br>
+<br>
+result = src_206.main(ccu_file, value, text)<br>
+<br>
+print("")<br>
+print(result)<br>
+print("")<br>
+<br>
 ---------------<br>
 <br>
 After running, the results in the dict form will be printed on screen as follow:<br>
 <br>
-{'power_10': '10-5 (in value)', 'value_cl': '9.200000E-05', 'unit': 'mS/m', 'value_cv': '9.200000E-10', 'unit_cv': 'S cm-1', 'factor': '1.000000E-05', 'use_power_10': 'use as recognized', 'CCU_file': 'electric-conductivity_CCU.txt'}<br>
+{'power_10': '10-4 (in value)', 'value_cl': '9.200000E-04', 'unit': 'kg/cm3', 'value_cv': '9.200000E-01', 'unit_cv': 'g cm-3', 'factor': '1.000000E+03', 'use_power_10': 'use as recognized', 'CCU_file': 'density_CCU.txt'}<br>
 <br>
 power_10: recognized power of ten<br>
 value_cl: cleaned value<br>
@@ -85,7 +85,6 @@ The new files can be created by users.<br>
 If necessary, create by seeing 'How to create a component unit file' below.<br>
 The correspondence between names and symbols can be confirmed easier in used-comp-unit.dat in /src/199_file than in the files.<br>
 <br>
-<br>
 For thermal conductivity, the following two CCUs are necessary to register, because there are two notation patterns such as 'W/cm K' and 'J/s cm K':<br>
 *power [/length /temperature]<br>
 *energy [/time /length /temperature]<br>
@@ -94,7 +93,7 @@ In the registration, use names for component units such as 'power' and 'length',
 In the registration, a writing order of names from left is important, becasue the component units in the generated notations are ordered accoding to the order.<br>
 The writing order of component units is not always fixed in scientific documents, especially in the denominator part, such as 'W/cm K' and 'W/K cm'.<br>
 Therefore, if there is such a part, use square brackets in the registration.<br>
-All orders of component units enclosed in them are considered in the program.<br>
+All orders of component units enclosed in them are generated in the program.<br>
 However, if unnecessary, it is better not to use them because of less time to execute the program.<br>
 In the two CCUs above, square brackets are used for the denominator part.<br>
 <br>
@@ -113,11 +112,10 @@ Another example is the unit for acceleration and the general notation is 'm s-2'
 Since there is no component unit file for 's-2', use parentheses similarily:<br>
 *length /time(2)<br>
 <br>
-<br>
-If there is desirable component unit file or no proper symbol in a file, create or register by seeing 'How to create a component unit file' below.<br>
-Since there are various unit notaions other than typical ones, such as 'denier' (a unit for tha thickness of fiber), create user origical files.<br>
-About typographical error symbols such as 'pa' for 'Pa' (pascal), they can be registed in symbol-variant.txt in /src/199_file/other-necessaries as the varinants.
-Regist by seeing 'How to register allowable characters for unit recognition' below.<br>
+If there is no desirable component unit file or no proper symbol in a file, create or register by seeing 'How to create a component unit file' below.<br>
+Since there are various unit notaions other than typical ones, e.g. 'denier' (a unit for the thickness of fiber), create user origical files.<br>
+About common typographical errors for symbols such as 'pa' for 'Pa' (pascal), they can be registed in symbol-variant.txt in /src/199_file/other-necessaries as the varinants.<br>
+If necessary, regist by seeing 'How to register allowable characters for unit recognition' below.<br>
 <br>
 <br>
 In -- destination –-, register a destination unit such as 'W m-1 K-1'.<br>
@@ -131,7 +129,7 @@ These numbers denote as follows:<br>
 1: use always positive<br>
 2: use always negative<br>
 <br>
-Incorrect powers of ten are occasionally written in text from scientific articles.<br>
+Incorrect powers of ten are occasionally written in scientific documents.<br>
 If the order of magnitude for values is clear, it is better to specify 1 or 2.<br>
 <br>
 <br>
@@ -141,35 +139,35 @@ The filename can be anything, if the end is '_CCU.txt'.<br>
 <br>
 <br>
 ### How to register variants for symbols of component units<br>
-There are occasionally typographycal errors in text from scientific articles, e.g. 'pa' for Pa (pascal).<br>
-Such error notations can be also recognized by registering as the variants in symbol-variant.<br>txt in /src/199_file/other-necessaries.<br>
+There are occasionally typographycal errors for symbols in scientific documents, e.g. 'pa' for Pa (pascal).<br>
+Such error notations can be also recognized by registering as the variants in symbol-variant.txt in /src/199_file/other-necessaries.<br>
 The file is a TSV format and consists of three columns of symbol-variant, name, and symbol.<br>
 Register an error notation, the corresponding name and symbol for a component unit, respectively, as written in the file.<br>
 After the registration, once the program is executed, the notation will be outputted in used-comp-unit.dat in /src/199_file.<br>
-Please confirm by the file whether the notation is used or not.<br>
+Confirm in the file if the registered notation is used.<br>
 <br>
 <br>
 <br>
 ### How to create a component unit file
 If there is no proper symbol in the component unit files in /src/199_file/component-unit or no proper component unit file in the folder, it is neccessary to register or create them.<br>
-Show how to register symbols in the component unit files with using mass.txt in /src/199_file/component-unit as an example.<br>
+Show how to register symbols in the component unit files using mass.txt in /src/199_file/component-unit as an example.<br>
 The file is a TSV format and composes of four columns of symbol, destination, factor, and prefix-used.<br>
-In mass.txt, g (gram), t (ton), and lb (pound) are registered for symbol.<br>
+In mass.txt, 'g' (gram), 't' (ton), and 'lb' (pound) are registered for symbol.<br>
 For desitination, register a desitination unit.<br>
-In the registarion, it is better to use SI units.<br>
-Therefore, kg (kilogram) is registered in mass.txt.<br>
+SI units are better for it.<br>
+Therefore, 'kg' (kilogram) is registered in mass.txt.<br>
 The same desitination unit should be used for all regsitered symbols.<br>
-In the column of factor, register a conversion factor for the desitination unit.<br>
-For g (gram), 1e-3 is registered because of 1 g = 0.001 kg.<br>
+For factor, register a conversion factor for the desitination unit.<br>
+For g (gram), '1e-3' is registered because of 1 g = 0.001 kg.<br>
 The notaions for factor can be anything (e.g. 0.001, 1e-3), if they can be used as the float type in the program.<br>
-The factors for t (ton) and lb (pound) are registerd similarily.<br>
-If unit prefixes can be used for the registered symbols, they can be registered in the column of prefix-used.<br>
+The factors for 't' (ton) and 'lb' are registerd similarily.<br>
+If unit prefixes can be used for the registered symbols, they can be registered for prefix-used.<br>
 If registered, the notations and the factors are automatically generated in the program.<br>
 However, it is better not to register unnecessary ones because of less time to execute the program.<br>
-For g (gram), seven unit prefixes of n (nano), µ (micro), u (micro), m (milli), k (kilo), K (kilo), M (mega) are registered.<br>
+For 'g' (gram), seven unit prefixes of 'n' (nano), 'µ' (micro), 'u' (micro), 'm' (milli), 'k' (kilo), 'K' (kilo), 'M' (mega) are registered.<br>
 Usable unit prefixes can be confirmed in unit-prefix.txt in /src/199_file/unit-prefix.<br>
 For micro and kilo, 'u' and 'K' are also registered in the file as the variants for 'µ' and 'k', respectively, because they are frequently misprinted.<br>
-For t (ton) and lb (pound), unit prefixes are not regsitered.<br>
+For 't' (ton) and 'lb', unit prefixes are not regsitered.<br>
 If not use at all, write 'non'.<br>
 Conversely, if use all unit prefixes in unit-prefix.txt, write 'all'.<br>
 <br>
