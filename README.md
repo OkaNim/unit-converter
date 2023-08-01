@@ -49,15 +49,15 @@ Try to use it using text and value prepared by yourself or your original script 
 (If your original script is not put in /src, the folder path for /src should be specified using sys.path.append to import src_206.)<br>
 A CCU file (CCU: combination of component units) is neccessary to run the program.<br>
 Some CCU files for material properties are put in /src/199_file/CCU.<br>
-If there is no file for desirable one, create it by seeing 'How to create CCU files' below.<br>
-In the file, prepare for recognizing a unit and register a destination unit.<br>
+If there is no desirable file, create it by seeing 'How to create CCU files' below.<br>
+In the file, prepare for recognizing a unit and converting a value by registering CCUs, a destination unit ,etc.<br>
 <br>
 An input value is cleaned in the int or float type before converting for a destination unit.<br>
-The unnecessary characters such as '>' and 'ca.' in it are removed.<br>
-At this time, if a power of ten is included, it will be recogninzed and used in the cleaned value.<br>
+The unnecessary characters such as '>' and '~' in it are removed.<br>
+At this time, if a power of ten is included, it will be recogninzed and used to the cleaned value.<br>
 If only cleaning value is necessary (converting a value is unnecessary), set ccu_file="".<br>
 <br>
-If there are multiple sentences and phrases in which an unit may be written, put all of them in the list of text.<br>
+If there are multiple sentences and phrases in which a unit may be written, put all of them in the list of text.<br>
 Check them in order and stop checking at which a unit is recognized.<br>
 At this time, checking also if a power of ten is included there.<br>
 (The checking is not performed in other sentences or phrases to avoid incorrect recognition.)<br>
@@ -77,11 +77,11 @@ A CCU file includes the following three terms:<br>
 <br>
 <br>
 In -- combination of component units --, register CCUs for unit recognition.<br>
-Based on the CCUs, various unit notations are generated in the program, and a unit in an input text or value is recognized using them.<br>
+Based on the CCUs, various unit notations are generated in the program, and a unit in an input text or value is then recognized using them.<br>
 The factors for value conversion are also generated simultaneously.<br>
 These are performed using the component unit files in /src/199_file/component-unit.<br>
-The filename (e.g. 'mass.txt') includes a name for a unit, and symbols for the name ('g'(gram), 't'(ton), etc.), factors, and necessary unit prefixes are registered in the files.<br>
-The files can be created by users.<br>
+The filename (e.g. mass.txt) includes the name ('mass') for the component unit, and symbols for the name ('g'(gram), 't'(ton), etc.), factors, and necessary unit prefixes are registered.<br>
+The new files can be created by users.<br>
 If necessary, create by seeing 'How to create a component unit file' below.<br>
 The correspondence between names and symbols can be confirmed easier in used-comp-unit.dat in /src/199_file than in the files.<br>
 <br>
@@ -90,13 +90,13 @@ For thermal conductivity, the following two CCUs are necessary to register, beca
 *power [/length /temperature]<br>
 *energy [/time /length /temperature]<br>
 <br>
-In the registration, use names for component units such as 'power' and 'length' and prefix * or / to each name to denote which the component unit is in the numerator or denominator parts, respectively.<br>
+In the registration, use names for component units such as 'power' and 'length', and prefix * or / to each name to denote which the component unit is in the numerator or denominator parts, respectively.<br>
 In the registration, a writing order of names from left is important, becasue the component units in the generated notations are ordered accoding to the order.<br>
 The writing order of component units is not always fixed in scientific documents, especially in the denominator part, such as 'W/cm K' and 'W/K cm'.<br>
 Therefore, if there is such a part, use square brackets in the registration.<br>
-All orders of component units enclosed in them are automatically considered.<br>
+All orders of component units enclosed in them are considered in the program.<br>
 However, if unnecessary, it is better not to use them because of less time to execute the program.<br>
-In the two CCUs above, square brackets are used for the denominator part.
+In the two CCUs above, square brackets are used for the denominator part.<br>
 <br>
 In addition to square brackets, there is a case in which parentheses is necessary.<br>
 The case is that it is necessary to add an exponent to a component unit.<br>
