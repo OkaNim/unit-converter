@@ -44,10 +44,10 @@ CCU_file: used CCU file name.<br>
 If there are underscores(_) in dict_values, they denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
 <br>
 <br>
-This program can recognize a unit in input text and then convert value for a destination unit.<br>
+This program can recognize a unit in input text or value and then convert value for a destination unit.<br>
 Try to use it using text and value prepared by yourself or your original script such as test.py.<br>
 (If your original script is not put in /src, the folder path for /src should be specified using sys.path.append to import src_206.)<br>
-A CCU file (CCU: combination of component units) is neccessary to run it.<br>
+A CCU file (CCU: combination of component units) is neccessary to run the program.<br>
 Some CCU files for material properties are put in /src/199_file/CCU.<br>
 If there is no file for desirable one, create it by seeing 'How to create CCU files' below.<br>
 In the file, prepare for recognizing a unit and register a destination unit.<br>
@@ -84,6 +84,7 @@ The filename (e.g. 'mass.txt') includes a name for a unit, and symbols for the n
 The files can be created by users.<br>
 If necessary, create by seeing 'How to create a component unit file' below.<br>
 The correspondence between names and symbols can be confirmed easier in used-comp-unit.dat in /src/199_file than in the files.<br>
+<br>
 <br>
 For thermal conductivity, the following two CCUs are necessary to register, because there are two notation patterns such as 'W/cm K' and 'J/s cm K':<br>
 *power [/length /temperature]<br>
@@ -159,7 +160,7 @@ In the registarion, it is better to use SI units.<br>
 Therefore, kg (kilogram) is registered in mass.txt.<br>
 The same desitination unit should be used for all regsitered symbols.<br>
 In the column of factor, register a conversion factor for the desitination unit.<br>
-For g (gram), 1e-3 is registered because of 1 g = 1e-3 kg.<br>
+For g (gram), 1e-3 is registered because of 1 g = 0.001 kg.<br>
 The notaions for factor can be anything (e.g. 0.001, 1e-3), if they can be used as the float type in the program.<br>
 The factors for t (ton) and lb (pound) are registerd similarily.<br>
 If unit prefixes can be used for the registered symbols, they can be registered in the column of prefix-used.<br>
@@ -172,8 +173,34 @@ For t (ton) and lb (pound), unit prefixes are not regsitered.<br>
 If not use at all, write 'non'.<br>
 Conversely, if use all unit prefixes in unit-prefix.txt, write 'all'.<br>
 <br>
+<br>
 If there is no proper component unit file, create a new file based on an existing file.
 The finename can be anything, if the end is '.txt'.
+The character string before '.txt' is used as the name.
+<br>
+<br>
+Show how to create special component unit files from here.<br>
+There are two special cases for unit conversion.<br>
+The one is a conversion between different physical quantities and the example is from the mass of water vapor to volume at standard temperature and pressure (0 °C, 1 atm).<br>
+In this case, register not only a symbol, also the corresponding name, for destination in a component unit file.<br>
+This can be seen in water-mass.txt in /src/199_file/component-unit.<br>
+In the file, 'volume: cm3' is registered using a colon (:).<br>
+For factor, '1243.06' is registered because of 1 g of water vapor = 1243.06 cm3 at standard temperature and pressure.<br>
+By doing this, the conversion from mass to volume will be possible.<br>
+<br>
+The another is a conversion between a special unit notation and normal compounded units.<br>
+For example, 'Gal' is one of the unit notations for acceleration and is used for acceleration of earthquake shaking.<br>
+Because of 1 Gal = 0.01 m s-2, the conversion between the units is possible.<br>
+However, there is no normal component unit file for 'Gal'.<br>
+For such a case, create the special component unit file, for example, as gal.txt.<br>
+However, it is necessary to create also the CCU file for acceleration.<br>
+The CCU file is named as acceleration_CCU.txt and regiser the following two CCUs:<br>
+*gal<br>
+*length /time(2)<br>
+<br>
+Then, register 'Gal' for symbol, 'acceleration: m s-2' for destination, '1e-2' for factor in gal.txt.<br>
+For destination, 'acceleration' is registered.<br>
+By doing this, the conversion between various compounded units generated automatically from acceleration_CCU.txt and 'Gal' will be possible.<br>
 <br>
 <br>
 <br>
