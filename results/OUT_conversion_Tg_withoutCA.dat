@@ -1,6 +1,0 @@
-comment										
-INPUT											OUTPUT					
-file-name	tlabel	polymer-name	prop-specifier	value	property	cell-address	no-thead	related-tcd	caption	footnote	power-of-ten-in-value/others	unit	coeff	location-describing-unit	value-clean	value-convert
-test.journal	Table 1	Table 1	Tg , K	300	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-273	prop-specifier	300	27
-test.journal	Table 1	Table 1	Glass transition temperature (K)	200	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-273	prop-specifier	200	-73
-test.journal	Table 1	Table 1	Tgd (°C)	100	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	°C	0	prop-specifier	100	1E+2
