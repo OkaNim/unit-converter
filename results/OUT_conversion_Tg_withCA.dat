@@ -1,6 +1,0 @@
-comment																	accuracy_power-of-ten-recognition = 1.000 (=3/3) / accuracy_unit-recognition = 1.000 (=3/3) / accuracy_value-cleansing = 1.000 (=3/3) / accuracy_unit-conversion = 1.000 (=3/3)
-INPUT											CORRECT ANSWER						OUTPUT						EVALUATION			
-file-name	tlabel	polymer-name	prop-specifier	value	property	cell-address	no-thead	related-tcd	caption	footnote	ca-power-of-ten-in-value/others	ca-unit	ca-coeff	ca-position-describing-unit	ca-value-clean	ca-value-convert	power-of-ten-in-value/others	unit	coeff	location-describing-unit	value-clean	value-convert	TF-power-of-ten	TF-unit	TF-value-clean	TF-value-convert
-test.journal	Table 1	Table 1	Tg , K	300	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-2.730000E+02	prop-specifier	3.000000E+02	2.700000E+01	_  /  _	K	-273	prop-specifier	300	27	1	1	1	1
-test.journal	Table 1	Table 1	Glass transition temperature (K)	200	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-2.730000E+02	prop-specifier	2.000000E+02	-7.300000E+01	_  /  _	K	-273	prop-specifier	200	-73	1	1	1	1
-test.journal	Table 1	Table 1	Tgd (°C)	100	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	°C	0.000000E+00	prop-specifier	1.000000E+02	1.000000E+02	_  /  _	°C	0	prop-specifier	100	1E+2	1	1	1	1
