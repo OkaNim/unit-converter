@@ -1,6 +1,0 @@
-comment																
-INPUT											CORRECT ANSWER					
-file-name	tlabel	polymer-name	prop-specifier	value	property	cell-address	no-thead	related-tcd	caption	footnote	ca-power-of-ten-in-value/others	ca-unit	ca-coeff	ca-position-describing-unit	ca-value-clean	ca-value-convert
-test.journal	Table 1	Table 1	Tg , K	300	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-2.730000E+02	prop-specifier	3.000000E+02	2.700000E+01
-test.journal	Table 1	Table 1	Glass transition temperature (K)	200	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	K	-2.730000E+02	prop-specifier	2.000000E+02	-7.300000E+01
-test.journal	Table 1	Table 1	Tgd (°C)	100	Glass transition temperature (Tg)	_	_	_	_	_	_  /  _	°C	0.000000E+00	prop-specifier	1.000000E+02	1.000000E+02
