@@ -13,10 +13,10 @@ import src_206_unit_convertor_230801 as src_206<br>
 <br>
 <br>
 ccu_file = "density_CCU.txt"<br>
-value = "9.2 × 10-4"<br>
-text = ["bulk density (kg/cm3)", "(Table caption) Results of the obtained physical values"]<br>
+text = ["bulk density (kg/cm3)", "9.2 × 10-4", "(Table caption) Results of the obtained physical values"]<br>
+# value = text[1]<br>
 <br>
-result = src_206.main(ccu_file, value, text)<br>
+result = src_206.main(ccu_file, text, id_value=1)<br>
 <br>
 print("")<br>
 print(result)<br>
@@ -39,25 +39,26 @@ CCU_file: used CCU file name.<br>
 If there are underscores(_) in dict_values, they denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
 <br>
 <br>
-This program can recognize a unit in input text or value and then convert value for a destination unit.<br>
-Try to use it using text and value prepared by yourself or your original script such as test.py.<br>
+This program is a unit convertor for the data extracted from scientific documents.
+A unit in input text can be recognized and a value can be then converted for a destination unit.<br>
+Try to use it using text prepared by yourself or your original script such as test.py.<br>
 (If your original script is not put in /src, the folder path for /src should be specified using sys.path.append to import src_206.)<br>
+If there are multiple sentences and phrases in which a unit may be written, put all of them in the text list.<br>
+Check them in order and stop checking at which a unit is recognized.<br>
+The order in the list may be important to recognize a unit correctly.<br>
+In the text list, specify which is value by id_value using a list element index.<br>
+In test.py, since "9.2 × 10-4" is value, id_value=1 is set.<br>
+Value is cleaned in the int or float type before converting for a destination unit.<br>
+The unnecessary characters such as '>' and '~' in it are removed.<br>
+At this time, if a power of ten is included, it will be recogninzed and used to the cleaned value.<br>
+A power of ten is checked also in sentences or phrases except for value.
+However, the checking is performed only for one in which a unit is recognized.<br>
+<br>
 A CCU file (CCU: combination of component units) is neccessary to run the program.<br>
 Some CCU files for material properties are put in /src/199_file/CCU.<br>
 If there is no desirable file, create it by seeing 'How to create CCU files' below.<br>
 In the file, prepare for recognizing a unit and converting a value by registering CCUs, a destination unit ,etc.<br>
-<br>
-An input value is cleaned in the int or float type before converting for a destination unit.<br>
-The unnecessary characters such as '>' and '~' in it are removed.<br>
-At this time, if a power of ten is included, it will be recogninzed and used to the cleaned value.<br>
 If only cleaning value is necessary (converting a value is unnecessary), set ccu_file="".<br>
-<br>
-If there are multiple sentences and phrases in which a unit may be written, put all of them in the list of text.<br>
-Check them in order and stop checking at which a unit is recognized.<br>
-At this time, checking also if a power of ten is included there.<br>
-(The checking is not performed in other sentences or phrases to avoid incorrect recognition.)<br>
-If a power of ten is recognized, the cleaned value will be multiplied by it.<br>
-If text is unnecessary to use because of writing a unit in value, please set text=[].<br>
 <br>
 <br>
 <br>
@@ -116,6 +117,7 @@ If necessary, regist by seeing 'How to register allowable characters for unit re
 In -- destination –-, register a destination unit such as 'W m-1 K-1'.<br>
 In the registration, it is necessary to use negative exponents, not slash (/), for component units in the denominator part.<br>
 Even if two or more combinations are registered in -- combination of component units --, one destination unit should be registered.<br>
+A destination unit can be anything, e.g. 'mW cm-1 °C-1', if its notation can be ganerated from the registered CCUs.<br>
 <br>
 <br>
 In -- + or - sign for power of 10 in text other than value --, specify how to use powers of ten recognized in text other than value using 0, 1, or 2.<br>
