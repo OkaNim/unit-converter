@@ -38,7 +38,7 @@ CCU_file: used CCU file name.<br>
 If there are underscores(_) in dict_values, they denote that a value or a power of ten could not be recognized or cleaned or converted.<br>
 <br>
 <br>
-This program is a unit convertor for the data extracted from scientific documents.
+This program is a unit convertor for the data extracted from scientific documents.<br>
 A unit in input text can be recognized and a value can be then converted for a destination unit.<br>
 Try to use it using text prepared by yourself or your original script such as test.py.<br>
 (If your original script is not put in /src, the folder path for /src should be specified using sys.path.append to import src_206.)<br>
@@ -50,7 +50,7 @@ In test.py, since "9.2 × 10-4" is value, id_value=1 is set.<br>
 Value is cleaned in the int or float type before converting for a destination unit.<br>
 The unnecessary characters such as '>' and '~' in it are removed.<br>
 At this time, if a power of ten is included, it will be recogninzed and used to the cleaned value.<br>
-A power of ten is checked also in sentences or phrases except for value.
+A power of ten is checked also in sentences or phrases except for value.<br>
 However, the checking is performed only for one in which a unit is recognized.<br>
 <br>
 A CCU file (CCU: combination of component units) is neccessary to run the program.<br>
