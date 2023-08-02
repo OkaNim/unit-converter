@@ -13,8 +13,7 @@ import src_206_unit_convertor_230801 as src_206<br>
 <br>
 <br>
 ccu_file = "density_CCU.txt"<br>
-text = ["bulk density (kg/cm3)", "9.2 × 10-4", "(Table caption) Results of the obtained physical values"]<br>
-# value = text[1]<br>
+text = ["bulk density (kg/cm3)", "9.2 × 10-4", "(Table caption) Results of the obtained physical values"]    # value = text[1]<br>
 <br>
 result = src_206.main(ccu_file, text, id_value=1)<br>
 <br>
